@@ -28,15 +28,15 @@ export const initialState: WalletState = {
   initialized: false,
   currentCurrencies: [
     {
-      amount: 100,
+      amount: 0,
       currency: CurrencyTypes.USD,
     },
     {
-      amount: 500,
+      amount: 580.42,
       currency: CurrencyTypes.EUR,
     },
     {
-      amount: 1000,
+      amount: 10000,
       currency: CurrencyTypes.SWISS_FRANC,
     },
   ],
