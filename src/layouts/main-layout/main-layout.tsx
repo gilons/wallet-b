@@ -19,7 +19,6 @@ const ContentContainer = styled.div<LayoutProps>`
   min-height: 100vh;
   height: auto;
   margin: auto;
-  transition: all 1s 1s ease-in-out;
   margin-top: 70px;
 `;
 

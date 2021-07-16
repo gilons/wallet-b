@@ -10,6 +10,7 @@ const MainContainer = styled(Container)`
   max-width:600px;
   margin-top: 80px;
   margin-bottom: 20px;
+  margin-left: 25px;
   flex-direction: column;
 `;
 const MainContent = styled(Container)`

@@ -8,7 +8,6 @@ export const Text = styled.div<TextThemeProps>`
   font-size: ${(props) => props.fontSize || props.theme.textNormal};
   font-weight: ${(props) => props.fontWeight || props.theme.textFontWeight};
   font-style: ${(props) => props.fontStyle || props.theme.textFontStyle};
-  transition: all 1s 1s ease-in-out;
   display: webkit-box;
   -webkit-box-orient: vertical;
 `;

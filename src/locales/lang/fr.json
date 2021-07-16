@@ -39,7 +39,7 @@
         "title": "Devise par défaut"
     },
     "transferCurrency": {
-        "title": "Devise de transfert",
+        "title": "Transfert de Devise",
         "buttonText": "Transfert",
         "fromCurrency": "De la devise",
         "transferAmount": "Montant du transfert",

@@ -71,7 +71,7 @@ const OptionContainer = styled(Container)<OptionContainerProp>`
   background-color: ${(props) =>
     props.selected ? props.theme.accent : "transparent"};
   width: 100%;
-  transition: all 1s 1s ease-in-out;
+  transition: all 0.5s 0.5s ease-in-out;
   min-height: 35px;
 `;
 const OptionsContent = styled.div`

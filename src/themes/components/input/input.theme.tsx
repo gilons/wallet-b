@@ -21,7 +21,7 @@ export const InputContainer = styled(ContainerSolid)`
   & > div:nth-child(2) {
     transition: all 0.2s 0.2s ease-in-out;
     border: none;
-    margin-top: 15px;
+    margin-top: 7px;
     position: absolute;
     background-color: transparent;
     z-index: 2;
@@ -30,7 +30,7 @@ export const InputContainer = styled(ContainerSolid)`
 const InputModifier = css`
   background-color: ${(props) => props.theme.accent};
   padding: 10px;
-  transition: all 0.2s 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
   box-shadow: ${shadow};
   border-radius: 10px;
   margin-top: -30px;

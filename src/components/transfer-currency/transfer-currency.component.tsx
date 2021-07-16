@@ -129,7 +129,8 @@ export function TransferCurrency(props: CurrencyActionProps) {
               })
             }
             placeholder={t("transferCurrency.amountPlaceholder")}
-            value={amount?.toFixed(2)}
+            label={t("transferCurrency.amountPlaceholder")}
+            value={amount?.toFixed(0)}
             type="number"
             max={currentSelectedAmount}
           />

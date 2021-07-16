@@ -9,7 +9,7 @@ import {
 
 const HeaderContent = styled.div`
   height: 40px;
-  transition: all 1s 1s ease-in-out;
+  transition: all 0.5s 0.5s ease-in-out;
   padding: 7px;
   display: flex;
   align-items: center;

@@ -27,7 +27,7 @@ const MainContainer = styled(ContainerShadow)`
 const TransactionTypeContainer = styled(ContainerShadow)`
   border-radius: 3px;
   background-color: ${(props) => props.theme.accent};
-  max-width: 40px;
+  max-width: 50px;
 `;
 
 const TransactionContainer = styled(Container)``;
