@@ -49,7 +49,7 @@
         "selectPlaceholder": "Sélectionnez la devise"
     },
     "depositCurrency": {
-        "title": "Devise de dépôt",
+        "title": "Dépôt de Devise",
         "currency": "Devise",
         "amount": "Montant",
         "amountPlaceholder": "Entrez le montant",
