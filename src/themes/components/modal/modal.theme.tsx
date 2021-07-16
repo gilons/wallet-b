@@ -13,7 +13,6 @@ const coverScreenStyles = css<ModalState>`
   border-radius: ${(props) => (props.shown ? 0 : 200)}px;
   padding-top: 0px;
   flex-direction: column;
-  transition: all 0.5s 0.5s ease-out;
   justify-content: center;
   overflow: hidden;
   margin-left: ${(props) => (props.shown ? 0 : -110)}vw;
@@ -39,6 +38,7 @@ const ModalSubContainer = styled.div<ModalState>`
 const CloserContainer = styled.div<ModalState>`
   ${coverScreenStyles}
   background-color: rgba(0,0,0,0.5);
+  transition: all 0.5s 0.5s ease-out;
   z-index: ${(props) => (props.shown ? 12 : 0)};
 `;
 
