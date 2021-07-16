@@ -1,0 +1,75 @@
+{
+    "translation": {
+        "title": "Select Language"
+    },
+    "currencies":{
+        "usDollar": "US dollars",
+        "canadianDollar": "Candia Dollars",
+        "ukPound": "British pounds",
+        "euro": "Euros",
+        "australianDollar": "Australian dollars",
+        "dinar": "Dinar",
+        "vietnamDong": "Vietnam Dong",
+        "norwegianKrone": "Norwegian krone",
+        "moroccanDirham": "Moroccan Dirham",
+        "nigerianNaira": "Nigerian naira",
+        "peso": "pesos",
+        "real": "Brazilian real",
+        "riyal": "Saudi riyal",
+        "russianRuble": "Russian ruble",
+        "indianRupee": "Indonesian Rupiah",
+        "israelShekel": "Israel Shekel",
+        "southAfricaRand": "South African Rand",
+        "swissFranc": "Swiss Franc",
+        "bangladeshTaka": "Bangladesh Taka",
+        "turkishLira": "Turkish Lira",
+        "koreanWong": "Korean Wong",
+        "japaneseYen": "Japanese Yen",
+        "chinaRenminbi": "Chinese Renminbi",
+        "polishZloty": "Polish Zloty"
+    },
+    "addCurrency": {
+        "placeholder": "Select Currency",
+        "buttonText": "Add Currency",
+        "title": "Add New Currency"
+    },
+    "changeCurrency": {
+        "placeholder": "Select Currency",
+        "buttonText": "Change",
+        "title": "Default Currency"
+    },
+    "transferCurrency": {
+        "title": "Transfer Currency",
+        "buttonText": "Transfer",
+        "fromCurrency": "From Currency",
+        "transferAmount": "Transfer Amount",
+        "amountPlaceholder": "Enter Amount",
+        "selectCurrencyPlaceholder": "Select Amount",
+        "toCurrency": "To Currency",
+        "selectPlaceholder": "Select Currency"
+    },
+    "depositCurrency": {
+        "title": "Deposit Currency",
+        "currency": "Currency",
+        "amount": "Amount",
+        "amountPlaceholder": "Enter Amount",
+        "buttonText": "Deposit"
+    },
+    "manageCurrencies": {
+        "title": "Manage Currency"
+    },
+    "transactionTypes": {
+        "deposit": "Deposit",
+        "transfer": "Transfer"
+    },
+    "banner": {
+        "title": "Welcome to Wallet-B App",
+        "subtitle": "Current Ballance"
+    },
+    "transactions": {
+        "title": "Transactions History"
+    },
+    "currenciesCard": {
+        "title": "Current Currencies"
+    }
+}

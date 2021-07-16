@@ -1,0 +1,7 @@
+export * from "./text.theme"
+export * from "./text-h1.theme"
+export * from "./text-h2.theme"
+export * from "./text-h3.theme"
+export * from "./text-normal.theme"
+export * from "./types.text"
+export * from "./text-tiny.theme"

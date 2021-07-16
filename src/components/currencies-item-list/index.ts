@@ -1,0 +1,1 @@
+export * from "./currencies-item-list.component"

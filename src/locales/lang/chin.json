@@ -1,0 +1,75 @@
+{
+    "translation": {
+        "title": "选择语言"
+    },
+    "currencies": {
+        "usDollar": "美元",
+        "canadianDollar": "Candia Dollars",
+        "ukPound": "英镑",
+        "euro": "欧元",
+        "australianDollar": "澳大利亚元",
+        "dinar": "第纳尔",
+        "vietnamDong": "越南盾",
+        "norwegianKrone": "挪威克朗",
+        "moroccanDirham": "摩洛哥迪拉姆",
+        "nigerianNaira": "尼日利亚奈拉",
+        "peso": "比索",
+        "real": "巴西雷亚尔",
+        "riyal": "沙特里亚尔",
+        "russianRuble": "俄罗斯卢布",
+        "indianRupee": "印度尼西亚卢比",
+        "israelShekel": "以色列谢克尔",
+        "southAfricaRand": "南非兰特",
+        "swissFranc": "瑞士法郎",
+        "bangladeshTaka": "孟加拉国塔卡",
+        "turkishLira": "土耳其里拉",
+        "koreanWong": "韩国王",
+        "japaneseYen": "日元",
+        "chinaRenminbi": "中国人民币",
+        "polishZloty": "波兰兹罗提"
+    },
+    "addCurrency": {
+        "placeholder": "选择货币",
+        "buttonText": "添加货币",
+        "title": "添加新货币"
+    },
+    "changeCurrency": {
+        "placeholder": "选择货币",
+        "buttonText": "更改",
+        "title": "默认货币"
+    },
+    "transferCurrency": {
+        "title": "转账货币",
+        "buttonText": "传输",
+        "fromCurrency": "来自货币",
+        "transferAmount": "转账金额",
+        "amountPlaceholder": "金额",
+        "toCurrency": "到货币",
+        "selectCurrencyPlaceholder": "选择金额",
+        "selectPlaceholder": "选择货币"
+    },
+    "depositCurrency": {
+        "title": "存款货币",
+        "currency": "货币",
+        "amount": "金额",
+        "amountPlaceholder": "输入金额",
+        "buttonText": "存款"
+    },
+    "manageCurrencies": {
+        "title": "管理货币"
+    },
+    "transactionTypes": {
+        "deposit": "存款",
+        "transfer": "转让"
+    },
+    "banner": {
+        "title": "欢迎使用 Wallet-B 应用程序",
+        "subtitle": "当前余额"
+    },
+    "transactions": {
+        "title": "交易历史"
+    },
+    "currenciesCard": {
+        "title": "当前货币"
+    }
+}

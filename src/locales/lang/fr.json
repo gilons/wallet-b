@@ -1,0 +1,75 @@
+{
+    "translation": {
+        "title": "Choisir la langue"
+    },
+    "currencies": {
+        "usDollar": "Dollars américains",
+        "canadianDollar": "Candia Dollars",
+        "ukPound": "Livres britanniques",
+        "euro": "Euros",
+        "australianDollar": "Dollars australiens",
+        "dinar": "Dinar",
+        "vietnamDong": "Vietnam Dong",
+        "norwegianKrone": "couronne norvégienne",
+        "moroccanDirham": "Dirham marocain",
+        "nigerianNaira": "Naira nigérian",
+        "peso": "pesos",
+        "real": "Real brésilien",
+        "riyal": "riyal saoudien",
+        "russianRuble": "Rouble russe",
+        "indianRupee": "Roupie indonésienne",
+        "israelShekel": "Israël Shekel",
+        "southAfricaRand": "Rand d'Afrique du Sud",
+        "swissFranc": "Franc suisse",
+        "bangladeshTaka": "Bangladesh Taka",
+        "turkishLira": "Lira turque",
+        "koreanWong": "Wong coréen",
+        "japaneseYen": "Yen japonais",
+        "chinaRenminbi": "Chine Renminbi",
+        "polishZloty": "Zloty polonais"
+    },
+    "addCurrency": {
+        "placeholder": "Sélectionnez la devise",
+        "buttonText": "Ajouter devise",
+        "title": "Ajouter une nouvelle devise"
+    },
+    "changeCurrency": {
+        "placeholder": "Sélectionnez la devise",
+        "buttonText": "Modifier",
+        "title": "Devise par défaut"
+    },
+    "transferCurrency": {
+        "title": "Devise de transfert",
+        "buttonText": "Transfert",
+        "fromCurrency": "De la devise",
+        "transferAmount": "Montant du transfert",
+        "amountPlaceholder": "Montant",
+        "toCurrency": "Vers la devise",
+        "selectCurrencyPlaceholder": "Sélectionnez la somme",
+        "selectPlaceholder": "Sélectionnez la devise"
+    },
+    "depositCurrency": {
+        "title": "Devise de dépôt",
+        "currency": "Devise",
+        "amount": "Montant",
+        "amountPlaceholder": "Entrez le montant",
+        "buttonText": "Dépôt"
+    },
+    "manageCurrencies": {
+        "title": "Gérer la devise"
+    },
+    "transactionTypes": {
+        "deposit": "Dépôt",
+        "transfer": "Transfert"
+    },
+    "banner": {
+        "title": "Bienvenue dans l'application Wallet-B",
+        "subtitle": "Ballance actuelle"
+    },
+    "transactions": {
+        "title": "Historique des transactions"
+    },
+    "currenciesCard": {
+        "title": "Devises"
+    }
+}
