@@ -30,7 +30,6 @@ const ModalSubContainer = styled.div<ModalState>`
   display: flex;
   flex-direction: column;
   position: relative;
-  transition: all 0.5s 0.5s ease-out;
   align-items: center;
   margin-left: ${(props) => (props.shown ? 0 : -110)}vw;
   width: 100vw;
@@ -48,7 +47,6 @@ const ContentContainer = styled.div<ModalState>`
   max-height: ${(props) => (props.shown ? props.maxHeight : 0)}px;
   z-index: 15;
   margin-top: 20vh;
-  transition: all 0.5s 0.5s ease-in-out;
   height: auto;
   position: absolute;
 `;
