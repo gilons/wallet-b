@@ -2,6 +2,7 @@ import { useEffect, useRef } from "react";
 import { OverlayConfig, OverlayView } from "../overlay-view";
 
  const UserOverlay = (options: OverlayConfig) => {
+   
   const overlay = useRef<OverlayView | null>(null);
 
   useEffect(() => {

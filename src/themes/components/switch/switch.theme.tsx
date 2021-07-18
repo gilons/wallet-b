@@ -45,9 +45,11 @@ const SwitchButton = styled.span`
 `;
 
 export const Switch = (props: SwitchPropsType) => {
+  
   const onClick = () =>
     props.onChange &&
     props.onChange((undefined as unknown) as ChangeEvent<HTMLInputElement>);
+    
   return (
     <>
       <SwitchInput

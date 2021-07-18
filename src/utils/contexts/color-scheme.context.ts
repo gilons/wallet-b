@@ -1,4 +1,5 @@
 import { createContext } from "react";
+import { ColorSchemes } from "../../themes/types.themes";
 import { ColorSchemeType } from "../types.utils";
 
 const isDarkMode =
@@ -6,7 +7,7 @@ const isDarkMode =
   window.matchMedia("(prefers-color-scheme: dark)").matches;
 
 export const DefaultScheme :ColorSchemeType = {
-  colorScheme: isDarkMode ? "dark" : "light",
+  colorScheme: isDarkMode ? ColorSchemes.DARK : ColorSchemes.LIGHT,
   setColorScheme: () => {}
 }
 

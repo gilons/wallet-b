@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, } from "react";
 import styled, { css } from "styled-components";
 import { useModal } from "../../../utils";
 
@@ -7,6 +7,8 @@ interface ModalState {
   maxWidth?: number;
   maxHeight?: number;
 }
+
+
 const coverScreenStyles = css<ModalState>`
   position: fixed;
   overflow: hidden;
@@ -22,9 +24,11 @@ const coverScreenStyles = css<ModalState>`
   width: 100vw;
   z-index: ${(props) => (props.shown ? 11 : 0)};
 `;
+
 const ModalContainer = styled.div<ModalState>`
   ${coverScreenStyles}
 `;
+
 const ModalSubContainer = styled.div<ModalState>`
   display: flex;
   flex-direction: column;
@@ -53,11 +57,14 @@ const ContentContainer = styled.div<ModalState>`
 `;
 
 export const Modal = () => {
+  
   const [modalState, setModalState] = useModal();
   const { shown, Component, maxHeight = 300, maxWidth = 500, key } = modalState;
+
   const toggle = () => {
     setModalState({ shown: !shown });
   };
+
   useEffect(() => {
     const fun = (e: KeyboardEvent) => {
       if(e.key === "Escape") {
@@ -66,7 +73,10 @@ export const Modal = () => {
     }
     window.addEventListener("keyup", fun)
     return () => window.removeEventListener("keypress", fun)
+
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   },[])
+
   return (
     <ModalContainer shown={shown}>
       <ModalSubContainer shown={shown}>

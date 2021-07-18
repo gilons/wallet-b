@@ -25,7 +25,9 @@ i18next.init({
     chin: { common: chin },
   },
 });
+
 export const currentLocale = () => i18next.language as Locale;
+
 export const useLocales = () => {
   const locales = useTranslation("common");
   const [locale, setLocale] = useLocalStorage<Locale>(
@@ -38,10 +40,13 @@ export const useLocales = () => {
   }, [locale]);
   return { ...locales, locale, setLocale };
 };
+
 export const changeLocale = (locale: Locale) => {
   i18next.changeLanguage(locale);
 };
+
 export const localesLanguages = () => i18next.languages;
+
 export const withLocales = (component: React.ComponentType) => {
   return withTranslation("common")(component);
 };

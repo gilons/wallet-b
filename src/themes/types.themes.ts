@@ -1,5 +1,8 @@
-
-export type ColorScheme = 'dark' | 'light'
+export enum ColorSchemes {
+  DARK = 'dark',
+  LIGHT = 'light',
+}
+export type ColorScheme = `${ColorSchemes}`
 export interface WithThemeProps {
     children: React.ReactNode,
 }

@@ -45,6 +45,7 @@ export const AddCurrency = (props: CurrencyActionProps) => {
   const value = t(
     currenciesMap[inputValue] ? currenciesMap[inputValue].title : ""
   );
+  
   const saveNewCurrency = useCallback(() => {
     if (selectedCurrency.current) {
       const data: CurrencyAmount = {
@@ -56,8 +57,12 @@ export const AddCurrency = (props: CurrencyActionProps) => {
       props.onDone && props.onDone();
     }
   }, [selectedCurrency, dispatch, props]);
+
   const Ico = currenciesMap[inputValue] && currenciesMap[inputValue].Icon;
   const Icon = Ico ? () => <Ico width={"35px"} height={"35px"} /> : Ico;
+
+
+
   return (
     <Form title={t("addCurrency.title")}>
       <>

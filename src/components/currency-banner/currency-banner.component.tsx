@@ -24,11 +24,15 @@ const SubTitle = styled(TextNormal)`
 const AmountText = styled(H1)`
   text-align: center;
 `;
+
+
 export function CurrencyBanner() {
   const { t } = useLocales();
   const totalAmountInWallet = useStoreSelector(totalAmountSelector);
   const defaultCurrency = useStoreSelector(defaultCurrencySelector);
   const currency = currenciesMap[defaultCurrency];
+
+  
   return (
     <MainContainer>
       <TitleText>{t("banner.title")}</TitleText>

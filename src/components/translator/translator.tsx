@@ -19,13 +19,15 @@ const TranslatorContainer = styled(Container)`
   box-shadow: ${shadow};
   border-color: ${(props) => props.theme.accent};
 `;
+
 const TransIconContainer = styled.div`
   &:hover {
     transform: scale(1.3);
-    transition: all 0.5s 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
   }
 `;
-const languageIcons: { [key: string]: React.ComponentType<any> } = {
+
+const languageIcons: { [key in Locale]: React.ComponentType<any> } = {
   en: EnglishIcon,
   fr: FranceIcon,
   chin: ChinaIcon,
@@ -37,9 +39,12 @@ const languageText: LanguageTextType = {
   fr: "Français",
   chin: "中国人",
 };
+
+
 export const Translator = () => {
 
   const { setLocale, locale } = useLocales();
+
   const languages = useMemo<Array<OptionType<Locale>>>(() => {
     const keys = Object.keys(languageText) as Array<Locale>;
     return keys.map((element) => ({
@@ -49,10 +54,16 @@ export const Translator = () => {
       text: languageText[element],
     }));
   }, [locale]);
-  const handleLanguageChange = useCallback((item: OptionType<Locale>) => {
-    setLocale(item.value);
-  }, [setLocale]);
+
+  const handleLanguageChange = useCallback(
+    (item: OptionType<Locale>) => {
+      setLocale(item.value);
+    },
+    [setLocale]
+  );
+
   const [, setModalState] = useModal();
+  
   const ModalContent = useMemo(
     () => (
       <Languages
@@ -72,6 +83,7 @@ export const Translator = () => {
 
     // considering this warning(that is adding all the required deps to the deps
     // array of this useEffect) will cause in rerendering infinite loop
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [locale]);
 
   const showLanguages = useCallback(() => {

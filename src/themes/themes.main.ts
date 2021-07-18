@@ -1,5 +1,6 @@
 import { css, DefaultTheme, } from "styled-components";
 import { useColorScheme } from "../utils";
+import { ColorScheme, ColorSchemes } from "./types.themes";
 declare module "styled-components" {
   export interface DefaultTheme {
     primary: string;
@@ -49,9 +50,9 @@ const darkTheme = Object.freeze<DefaultTheme>({
   blurFactor: 1,
 });
 
-export const themes = {
-  dark: darkTheme,
-  light: lightTheme,
+export const themes :{[key in ColorScheme]: DefaultTheme} = {
+  [ColorSchemes.DARK]: darkTheme,
+  [ColorSchemes.LIGHT]: lightTheme,
 };
 
 export const FlexRowItemsCenter = css`

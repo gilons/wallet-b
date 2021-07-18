@@ -16,7 +16,9 @@ const ManageContainer = styled.div`
      margin-bottom: 20px;
     `)}
 `;
+
 export default function MainPage() {
+  
   return (
     <MainLayout>
       <ManageContainer>

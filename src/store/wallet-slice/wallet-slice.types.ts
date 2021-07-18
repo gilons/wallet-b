@@ -6,10 +6,12 @@ export interface WalletState {
   currentCurrencies: Array<CurrencyAmount>;
   transactionHistory: Array<TransactionHistory>;
 }
+
 export enum TransactionTypes  {
   DEPOSIT = "deposit",
   TRANSFER = "transfer"
 }
+
 export type TransactionType = `${TransactionTypes}`;
 export interface TransactionHistory {
   currency: Currency;

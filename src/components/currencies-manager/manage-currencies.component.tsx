@@ -42,6 +42,7 @@ export function ManagerCurrencies() {
     }),
     [handleClose]
   );
+  
   const { t } = useLocales();
 
   const options: Array<Option<ActionUnion>> = useMemo(() => {
@@ -72,6 +73,8 @@ export function ManagerCurrencies() {
       },
     ];
   }, [t]);
+
+
   const onChange = useCallback(
     (item: Option<ActionUnion>) => {
       setModal({
@@ -81,6 +84,8 @@ export function ManagerCurrencies() {
     },
     [modalContent, setModal]
   );
+
+
   return (
     <MainContainer>
       <Select

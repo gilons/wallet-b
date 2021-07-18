@@ -13,6 +13,7 @@ export function useColorScheme(): [
   ColorScheme,
   Dispatch<SetStateAction<ColorScheme>>
 ] {
+  
   const schemeContext = useContext<ColorSchemeType>(ColorSchemeContext);
 
   return [schemeContext.colorScheme, schemeContext.setColorScheme];

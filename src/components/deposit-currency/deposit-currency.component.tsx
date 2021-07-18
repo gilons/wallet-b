@@ -43,8 +43,8 @@ const depositCurrencyReducer = (
 };
 
 export function DepositCurrency(props: CurrencyActionProps) {
-  const defaultCurrency = useStoreSelector(defaultCurrencySelector);
 
+  const defaultCurrency = useStoreSelector(defaultCurrencySelector);
   const initialValues: CurrencyAmount = {
     currency: defaultCurrency,
     amount: 0,
@@ -58,6 +58,8 @@ export function DepositCurrency(props: CurrencyActionProps) {
   const dispatch = useStoreDispatch();
   const { t } = useLocales();
   const currencies = useStoreSelector(currentCurrenciesSelector);
+
+
   const options = useMemo(() => {
     return currencies?.map((ele) => ({
       value: ele.name,
@@ -78,8 +80,11 @@ export function DepositCurrency(props: CurrencyActionProps) {
       props.onDone && props.onDone();
     }
   }, [currency, amount, dispatch, props]);
+
   const canSubmit = currency && amount;
   const dpValue = toOption(currenciesMap[currency]);
+
+  
   return (
     <Form title={t("depositCurrency.title")}>
       <>

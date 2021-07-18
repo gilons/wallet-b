@@ -7,9 +7,11 @@ const HeaderContent = styled(Container)`
   height: 20px;
   align-items: center;
 `;
+
 const Content = styled(Container)`
   margin-top: 0px;
 `;
+
 const WalletBForm = styled.form`
   padding: 6px;
   background-color: transparent;
@@ -18,9 +20,11 @@ const WalletBForm = styled.form`
   border-radius: 6px;
   box-shadow: ${shadow};
 `;
+
 const MainContainer = styled.div`
   background-color: ${(props) => props.theme.primary};
 `;
+
 export function Form(props: FormProps) {
     
     return <MainContainer>

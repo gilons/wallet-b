@@ -42,6 +42,7 @@ export const initialState: WalletState = {
   ],
   transactionHistory: [],
 };
+
 const findCurrency = (state: WalletState, currency: Currency) =>
   state.currentCurrencies.find((ele) => ele.currency === currency);
 
@@ -51,6 +52,7 @@ const addTransactionHistory = (
 ) => {
   if (history) state.transactionHistory.unshift(history);
 };
+
 const walletSlice = createSlice({
   name: "wallet-store",
   initialState,
@@ -62,12 +64,15 @@ const walletSlice = createSlice({
       state.initialized = true;
       state.transactionHistory = newState.transactionHistory;
     },
+
     addCurrency(state, action: PayloadAction<CurrencyAmount>) {
       if (action.payload) state.currentCurrencies.push(action.payload);
     },
+
     changeDefaultCurrency(state, action: PayloadAction<Currency>) {
       state.defaultCurrency = action.payload;
     },
+
     addAmountToCurrency(state, action: PayloadAction<CurrencyAmount>) {
       const currency = findCurrency(state, action.payload?.currency);
       if (currency) {
@@ -80,6 +85,7 @@ const walletSlice = createSlice({
         addTransactionHistory(state, history);
       }
     },
+
     transferCurrency(state, action: PayloadAction<CurrencyTransfer>) {
       const fromCurrency = findCurrency(state, action.payload?.fromCurrency);
       const toCurrency = findCurrency(state, action.payload?.toCurrency);
@@ -141,19 +147,23 @@ export const currencySelector = (currency: Currency) =>
   createDraftSafeSelector(selectCurrentCurrencies, (currencies) =>
     currencies.find((ele) => ele.currency === currency)
   );
+
 export const currencyAmountSelector = (currency: Currency) =>
   createDraftSafeSelector(selectCurrentCurrencies, (currencies) => {
     const newCurrency = currencies.find((ele) => ele.currency === currency);
     return newCurrency?.amount;
   });
+
 export const currentCurrenciesSelector = createDraftSafeSelector(
   selectCurrentCurrencies,
   (currencies) => currencies.map((ele) => currenciesMap[ele.currency])
 );
+
 export const currenciesAmountsSelector = createDraftSafeSelector(
   selectCurrentCurrencies,
   (currencies) => currencies
 );
+
 export const totalAmountSelector = createDraftSafeSelector(
   selectCurrentCurrencies,
   selectDefaultCurrency,
@@ -167,6 +177,7 @@ export const unUsedCurrenciesSelector = createDraftSafeSelector(
 
 const selectTransactionHistory = (state: RootState) =>
   state.wallet.transactionHistory;
+
 export const transactionHistorySelector = createDraftSafeSelector(
   selectTransactionHistory,
   (history) => history

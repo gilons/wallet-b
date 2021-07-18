@@ -51,8 +51,8 @@ const IconContainer = styled.div`
   width: 35px;
   margin-right: 5px;
   padding: 0px;
+  display: flex;
   cursor: pointer;
-  height: 100%;
   flex-direction: column;
 `;
 
@@ -62,6 +62,7 @@ const Closer = styled.div`
 interface OptionContainerProp {
   selected?: boolean;
 }
+
 const OptionContainer = styled(Container)<OptionContainerProp>`
   align-items: center;
   cursor: pointer;
@@ -73,10 +74,15 @@ const OptionContainer = styled(Container)<OptionContainerProp>`
   width: 100%;
   min-height: 35px;
 `;
+
 const OptionsContent = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
+`;
+
+const RightIcon = styled(IconContainer)`
+  width: 20px;
 `;
 
 const Divider = styled.div`
@@ -85,6 +91,7 @@ const Divider = styled.div`
   box-shadow: ${shadow};
   width: 100%;
 `;
+
 export function ItemsContent<T>({
   options,
   onClick,
@@ -112,14 +119,12 @@ export function ItemsContent<T>({
   );
   return <OptionsContent>{content}</OptionsContent>;
 }
+
 const TitleContainer = styled.div`
   display: flex;
   align-items: center;
 `;
 
-const RightIcon = styled(IconContainer)`
-  width: 20px;
-`;
 export function Select<T = string>(props: DropdownProps<T>) {
   const [show, setShow] = useState(false);
   const { placeholder, value } = props;

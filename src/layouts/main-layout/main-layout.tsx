@@ -7,14 +7,15 @@ import { storeInitSelector, useStoreSelector } from "../../store";
 interface LayoutProps {
   storeInit?: boolean;
 }
-const Layout = styled(ContainerSolid)`
+const Layout = styled(ContainerSolid)<LayoutProps>`
   min-height: 100vh;
-  padding-top: 50px;
+  padding-top: ${(props) => (props.storeInit ? "50px" : "100vh")};
+  transition: padding-top 0.5s ease-in-out;
   width: 100vw;
   padding: 0px;
   overflow: auto;
 `;
-const ContentContainer = styled.div<LayoutProps>`
+const ContentContainer = styled.div`
   max-width: 1224px;
   min-height: 100vh;
   height: auto;
@@ -24,10 +25,11 @@ const ContentContainer = styled.div<LayoutProps>`
 
 export const MainLayout = (props: WithThemeProps) => {
   const storeInit = useStoreSelector(storeInitSelector);
+
   return (
-    <Layout>
+    <Layout storeInit={storeInit}>
       <MainHeader />
-      <ContentContainer storeInit={storeInit}>
+      <ContentContainer>
         {props.children}
       </ContentContainer>
     </Layout>

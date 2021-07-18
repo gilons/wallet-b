@@ -52,17 +52,21 @@ const transferCurrencyFormReducer = (
 
 export function TransferCurrency(props: CurrencyActionProps) {
   const defaultCurrency = useStoreSelector(defaultCurrencySelector);
+
   const defaultCurrencyAmount = useStoreSelector(
     currencyAmountSelector(defaultCurrency)
   );
+
   const initialValues: TransferCurrencyInputTypes = {
     fromCurrency: toOption(currenciesMap[defaultCurrency]),
     amount: defaultCurrencyAmount ?? 0,
   };
+
   const [inputState,   dispatchInputUpdate] = useReducer<
     TransferCurrencyReducerType,
     TransferCurrencyInputTypes
   >(transferCurrencyFormReducer, initialValues, (args) => ({ ...args }));
+
   const { fromCurrency, amount, toCurrency } = inputState;
   const dispatch = useStoreDispatch();
   const { t } = useLocales();
@@ -78,14 +82,18 @@ export function TransferCurrency(props: CurrencyActionProps) {
         ),
       }));
   }, [currencies, t, toCurrency]);
+
+
   const currentSelectedAmount = useStoreSelector(
     currencyAmountSelector(fromCurrency.value)
   );
+
   const toCurrencySelectOption = useMemo(() => {
     return fromCurrencySelectOptions?.filter(
       (ele) => ele.value !== fromCurrency.value
     );
   }, [fromCurrency, fromCurrencySelectOptions]);
+
 
   useEffect(() => {
     if (currentSelectedAmount)
@@ -104,7 +112,9 @@ export function TransferCurrency(props: CurrencyActionProps) {
       props.onDone && props.onDone()
     }
   }, [fromCurrency, toCurrency, amount, dispatch, props]);
+
   const canSubmit = fromCurrency && amount && toCurrency;
+  
   return (
     <Form title={t("transferCurrency.title")}>
       <>

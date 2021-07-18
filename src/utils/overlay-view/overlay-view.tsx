@@ -5,13 +5,16 @@ import { WithLocaleProvider } from "../../locales";
 import { OverlayConfig, Position } from "./overlays.type";
 
 export class OverlayView {
+
   constructor({ id, maxHeight, maxWidth }: OverlayConfig) {
     this.id = "overlay-content-id-" + id;
     this.init();
     this.maxWidth = maxWidth || 500;
     this.maxHeight = maxHeight || 200;
   }
+
   id = "";
+
   private containerId: string = "overlay-container-id";
   private maxHeight;
   private maxWidth;
@@ -22,6 +25,10 @@ export class OverlayView {
   private subContainer: HTMLElement | null = null;
   private closer: HTMLElement | null = document.getElementById(this.id);
   private content: HTMLElement | null = document.getElementById(this.id);
+  private removeMousePositionListener() {
+    window.removeEventListener("mousemove", this.mouseMoveEventListener);
+  }
+
   private show = false;
   get shown() {
     return this.show;
@@ -31,6 +38,17 @@ export class OverlayView {
     this.computeContentStyles();
     this.computeContainerStyle();
   }
+
+  private subContainerStyles = `
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: all 0.5s 1s ease-in-out;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+`;
+
   private init() {
     if (!this.container) {
       this.container = document.createElement("div");
@@ -52,6 +70,7 @@ export class OverlayView {
     this.addMousePositionListener();
     this.computeContainerStyle();
   }
+
   computeContainerStyle() {
     const styles = `
       position: fixed;
@@ -77,15 +96,6 @@ export class OverlayView {
     }
   }
 
-  private subContainerStyles = `
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    transition: all 0.5s 1s ease-in-out;
-    align-items: center;
-    width: 100vw;
-    height: 100vh;
-  `;
   computeContentStyles() {
     const dynamicStyles = `
         max-width: ${this.shown ? this.maxWidth : 0}px;
@@ -103,16 +113,20 @@ export class OverlayView {
       this.content.style.cssText = styles;
     }
   }
+
   private mouseMoveEventListener = (e: MouseEvent) => {
     if (!this.shown) this.position = { x: e.pageX, y: e.pageY };
   };
+
   private addMousePositionListener() {
     window.addEventListener("mousemove", this.mouseMoveEventListener);
   }
+
   pos: Position = {
     x: 0,
     y: 0,
   };
+
   get position() {
     return this.pos;
   }
@@ -120,9 +134,7 @@ export class OverlayView {
     this.pos = val;
     this.computeContentStyles();
   }
-  private removeMousePositionListener() {
-    window.removeEventListener("mousemove", this.mouseMoveEventListener);
-  }
+ 
   destroy() {
     this?.removeMousePositionListener();
     const element = document?.getElementById(this.containerId);
@@ -133,6 +145,7 @@ export class OverlayView {
     this.shown = false;
     ReactDOM.unmountComponentAtNode(this.content as Element);
   }
+  
   showOverlay(Component: React.ReactElement) {
     if (this.content) {
       this.shown = true;

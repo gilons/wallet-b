@@ -25,6 +25,8 @@ import {
   ZlotyIcon,
   RenminbiIcon,
 } from "../../svg-icons";
+
+
 export enum CurrencyTypes {
   USD = "us-dollar",
   EUR = "euro",
@@ -51,6 +53,7 @@ export enum CurrencyTypes {
   RUPEE = "rupee",
   RENMINBI = "renminbi"
 }
+
 export type Currency = `${CurrencyTypes}`;
 export interface CurrencyItem {
   name: Currency;
@@ -59,6 +62,7 @@ export interface CurrencyItem {
   code: string;
   Icon: React.ComponentType<CurrencyIconProps>;
 }
+
 export const currenciesMap = Object.freeze<
   { [key in Currency]: CurrencyItem }
 >({

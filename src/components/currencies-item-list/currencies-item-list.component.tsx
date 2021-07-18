@@ -24,21 +24,25 @@ const CurrenciesTitle = styled(H2) `
 `
 
 export function CurrenciesItemList() {
+
   const currencies = useStoreSelector(currenciesAmountsSelector);
-  const Currencies = useMemo(() => {
+  const CurrenciesList = useMemo(() => {
     return currencies.slice()
       .sort((a, b) => (a.amount >= b.amount ? -1 : 1))
       .map((currency) => (
         <CurrencyItem key={currency.currency} amount={currency} />
       ));
   }, [currencies]);
+
   const {t} = useLocales()
+
+
   return (
     <MainContainer>
         <CurrenciesTitle>
             {t("currenciesCard.title")}
         </CurrenciesTitle>
-        <ContentContainer>{Currencies}</ContentContainer>
+        <ContentContainer>{CurrenciesList}</ContentContainer>
     </MainContainer>
   );
 }

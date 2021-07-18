@@ -6,6 +6,7 @@ interface ButtonProps extends WithThemeProps {
   enabled?: boolean;
   onClick?: () => any;
 }
+
 const ButtonContainer = styled.div<ButtonProps>`
   border: none;
   cursor: pointer;
@@ -38,6 +39,7 @@ const ButtonContainer = styled.div<ButtonProps>`
       props.enabled ? props.theme.primary : "transparent"};
   }
 `;
+
 const ButtonContent = styled.div<ButtonProps>`
   height: 100%;
   display: flex;
@@ -52,6 +54,7 @@ const ButtonContent = styled.div<ButtonProps>`
   justify-content: center;
   text-align: center;
 `;
+
 export const Button = (props: ButtonProps) => {
   return (
     <ButtonContainer
