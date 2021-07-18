@@ -79,6 +79,7 @@ const walletSlice = createSlice({
         currency.amount += action.payload.amount;
         const history: TransactionHistory = {
           ...currency,
+          amount: action.payload.amount,
           transactionDate: moment().format(),
           transactionType: TransactionTypes.DEPOSIT,
         };

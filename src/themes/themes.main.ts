@@ -36,7 +36,7 @@ const lightTheme = Object.freeze<DefaultTheme>({
   primary: "#f9fdff",
   inverted: "#031f22",
   color: "#032631",
-  accent: "rgba(3, 37, 31, 0.2)",
+  accent: "rgba(3, 37, 31, 0.05)",
   ...mainStyles,
   blurFactor: 1,
 });

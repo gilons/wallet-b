@@ -16,7 +16,8 @@ const MainContainer = styled(Container)`
 const ContentContainer = styled(ContainerSolid)`
   justify-content: center;
   align-items: center;
-  border-radius: 4px;
+  background-color: ${props => props.theme.accent};
+  border-radius: 10px;
 `;
 const CurrenciesTitle = styled(H2) `
     margin: 10px;

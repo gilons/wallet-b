@@ -109,7 +109,7 @@ export function DepositCurrency(props: CurrencyActionProps) {
               })
             }
             placeholder={t("depositCurrency.amountPlaceholder")}
-            value={amount?.toFixed(2)}
+            value={amount?.toFixed(0)}
             type="number"
           />
         </InputGroup>
