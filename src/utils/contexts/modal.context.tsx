@@ -5,7 +5,7 @@ export const DefaultModalState = {
   maxHeight: 300,
   key: "",
   maxWidth: 500,
-  Component: <div></div>,
+  Component:  <div></div>,
 };
 const DefaultModalContextValue: ModalContextValue = {
   modalState: DefaultModalState,

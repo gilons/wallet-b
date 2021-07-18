@@ -11,7 +11,7 @@ const SelectContainer = styled(ContainerShadow)`
   justify-content: center;
   border-radius: 5px;
   padding: 4px;
-  background-color: ${props => props.theme.accent};
+  background-color: ${(props) => props.theme.accent};
   overflow: visible;
   padding-left: 8px;
   min-height: 30px;
@@ -31,9 +31,9 @@ const SelectHeaderContent = styled(Container)`
 const OptionsContainer = styled.div<OptionContainerProps>`
   margin-left: -8px;
   margin-top: -4px;
-  transition: all 0.5s 0.5s ease-out;
+  transition: all 0.5s ease-out;
   height: auto;
-  z-index:10;
+  z-index: 10;
   overflow: ${(props) => (props.show ? "auto" : "hidden")};
   background-color: ${(props) => props.theme.primary};
   width: 100%;
@@ -52,7 +52,7 @@ const IconContainer = styled.div`
   margin-right: 5px;
   padding: 0px;
   cursor: pointer;
-  height: "100%";
+  height: 100%;
   flex-direction: column;
 `;
 
@@ -71,7 +71,6 @@ const OptionContainer = styled(Container)<OptionContainerProp>`
   background-color: ${(props) =>
     props.selected ? props.theme.accent : "transparent"};
   width: 100%;
-  transition: all 0.5s 0.5s ease-in-out;
   min-height: 35px;
 `;
 const OptionsContent = styled.div`
@@ -119,12 +118,12 @@ const TitleContainer = styled.div`
 `;
 
 const RightIcon = styled(IconContainer)`
-  width: 20px
-`
+  width: 20px;
+`;
 export function Select<T = string>(props: DropdownProps<T>) {
   const [show, setShow] = useState(false);
   const { placeholder, value } = props;
-  const title =  value || placeholder;
+  const title = value || placeholder;
   const toggleOptions = () => setShow((show) => !show);
   const iconSize = { width: "20px", height: "20px" };
   return (

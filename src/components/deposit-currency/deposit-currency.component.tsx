@@ -15,7 +15,6 @@ import {
   addAmountToCurrency,
   currentCurrenciesSelector,
   defaultCurrencySelector,
-  totalAmountSelector,
   useStoreDispatch,
   useStoreSelector,
 } from "../../store";
@@ -46,7 +45,6 @@ const depositCurrencyReducer = (
 export function DepositCurrency(props: CurrencyActionProps) {
   const defaultCurrency = useStoreSelector(defaultCurrencySelector);
 
-  const totalAmount = useStoreSelector(totalAmountSelector);
   const initialValues: CurrencyAmount = {
     currency: defaultCurrency,
     amount: 0,
@@ -85,7 +83,6 @@ export function DepositCurrency(props: CurrencyActionProps) {
   return (
     <Form title={t("depositCurrency.title")}>
       <>
-        {totalAmount}
         <InputGroup>
           <TextNormal>{t("depositCurrency.currency")}</TextNormal>
           <Select<Currency>

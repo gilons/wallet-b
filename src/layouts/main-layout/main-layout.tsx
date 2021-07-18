@@ -26,7 +26,7 @@ export const MainLayout = (props: WithThemeProps) => {
   const storeInit = useStoreSelector(storeInitSelector);
   return (
     <Layout>
-      <MainHeader></MainHeader>
+      <MainHeader />
       <ContentContainer storeInit={storeInit}>
         {props.children}
       </ContentContainer>

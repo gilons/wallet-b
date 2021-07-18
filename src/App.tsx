@@ -8,8 +8,8 @@ const MainPage =  React.lazy(() => import("./pages/main-page"));
 function App() {
   return (
     <WalletBProvider>
-      <Suspense fallback={Loader}>
-      <MainPage />
+      <Suspense fallback={<Loader/>}>
+        <MainPage />
       </Suspense>
     </WalletBProvider>
   );

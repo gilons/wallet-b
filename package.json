@@ -68,6 +68,8 @@
     ]
   },
   "devDependencies": {
+    "@cypress/react": "^5.9.1",
+    "@cypress/webpack-dev-server": "^1.4.0",
     "@formatjs/ts-transformer": "^3.4.5",
     "@storybook/addon-actions": "^6.3.4",
     "@storybook/addon-essentials": "^6.3.4",
@@ -76,7 +78,8 @@
     "@storybook/preset-create-react-app": "^3.2.0",
     "@storybook/react": "^6.3.4",
     "babel-plugin-const-enum": "^1.1.0",
-    "babel-plugin-replace-ts-export-assignment": "^0.0.2"
+    "babel-plugin-replace-ts-export-assignment": "^0.0.2",
+    "cypress": "^7.7.0"
   },
   "resolutions": {
     "styled-components": "^5"
