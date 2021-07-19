@@ -21,4 +21,3 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
 ### `yarn storybook`
 
 Launches the storybook so that you can see all the available components, layouts, and themes stories\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
