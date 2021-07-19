@@ -15,7 +15,7 @@ const SelectContainer = styled(ContainerShadow)`
   overflow: visible;
   padding-left: 8px;
   min-height: 30px;
-  max-height: 100px;
+  max-height: 35px;
 `;
 const SelectHeaderContent = styled(Container)`
   display: flex;
@@ -31,7 +31,7 @@ const SelectHeaderContent = styled(Container)`
 const OptionsContainer = styled.div<OptionContainerProps>`
   margin-left: -8px;
   margin-top: -4px;
-  transition: all 0.5s ease-out;
+  transition: max-height 0.5s linear;
   height: auto;
   z-index: 10;
   overflow: ${(props) => (props.show ? "auto" : "hidden")};
@@ -92,17 +92,28 @@ const Divider = styled.div`
   width: 100%;
 `;
 
+const waitForAnimationAndCallback = (id: string , callback: any) => {
+
+  const element = document.getElementById(id)
+  element?.addEventListener("transitionend", callback)
+
+  setTimeout(() => {
+    element?.removeEventListener("transitionend", callback)
+  }, 1000)
+}
 export function ItemsContent<T>({
   options,
   onClick,
   toggleOptions,
+  id
 }: DropdownItemsContentProps<T>) {
+  
   const content = useMemo(
     () =>
       options &&
       options.map((ele) => {
         const handleChange = () => {
-          onClick && onClick(ele);
+          waitForAnimationAndCallback(id, () => onClick && onClick(ele))
           toggleOptions && toggleOptions();
         };
         return (
@@ -115,7 +126,7 @@ export function ItemsContent<T>({
           </Container>
         );
       }),
-    [options, onClick, toggleOptions]
+    [options, id, toggleOptions, onClick]
   );
   return <OptionsContent>{content}</OptionsContent>;
 }
@@ -146,9 +157,10 @@ export function Select<T = string>(props: DropdownProps<T>) {
           )}
         </RightIcon>
       </SelectHeaderContent>
-      <OptionsContainer show={show}>
+      <OptionsContainer id={props.id} show={show}>
         <OptionsSubContainer opacity={0.7} intensity={100}>
           <ItemsContent<T>
+            id={props.id}
             options={props.options}
             toggleOptions={toggleOptions}
             onClick={props.onChange}

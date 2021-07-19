@@ -45,7 +45,7 @@ export const MainHeader = () => {
         <Title>Wallet-B</Title>
         <Right>
           <ManagerContainer>
-            <ManagerCurrencies />
+            <ManagerCurrencies id={"manager-currencies-header"} />
           </ManagerContainer>
           <Translator />
           <ColorSchemeSwitcher />

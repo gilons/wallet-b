@@ -23,7 +23,7 @@ const TranslatorContainer = styled(Container)`
 const TransIconContainer = styled.div`
   &:hover {
     transform: scale(1.3);
-    transition: all 0.5s ease-in-out;
+    transition: transform 0.5s ease-in-out;
   }
 `;
 
@@ -67,6 +67,7 @@ export const Translator = () => {
   const ModalContent = useMemo(
     () => (
       <Languages
+        id={"translator"}
         options={languages}
         onClick={handleLanguageChange}
         toggleOptions={() => {}}

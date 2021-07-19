@@ -8,16 +8,16 @@ import {
   useTranslation,
   withTranslation,
 } from "react-i18next";
-import { Locale, WithLocalePropsType } from "./locales.types";
+import { Locale, Locales, WithLocalePropsType } from "./locales.types";
 import { useLocalStorage } from "../utils";
 import { useEffect } from "react";
 
 i18next.use(initReactI18next);
 i18next.init({
   interpolation: { escapeValue: false },
-  fallbackLng: "en",
+  fallbackLng: Locales.EN,
   debug: true,
-  lng: "en",
+  lng: Locales.EN,
   resources: {
     // -> common -> custom namespace
     en: { common: en },
@@ -51,8 +51,7 @@ export const withLocales = (component: React.ComponentType) => {
   return withTranslation("common")(component);
 };
 
-export const i18n = i18next;
 
 export const WithLocaleProvider = (props: WithLocalePropsType) => {
-  return <I18nextProvider i18n={i18n}>{props.children}</I18nextProvider>;
+  return <I18nextProvider i18n={i18next}>{props.children}</I18nextProvider>;
 };

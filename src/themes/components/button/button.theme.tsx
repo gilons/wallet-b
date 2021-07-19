@@ -20,7 +20,6 @@ const ButtonContainer = styled.div<ButtonProps>`
   min-width: 60px;
   min-height: 40px;
   border-radius: 3px;
-  transition: all 0.5s 0.1s ease-in-out;
   overflow: hidden;
   position: relative;
   & > div:first-of-type {
@@ -29,12 +28,16 @@ const ButtonContainer = styled.div<ButtonProps>`
     box-shadow: ${shadow};
     width: 0%;
     background-color: transparent;
-    transition: all 1s 0.1s ease-in-out;
+    transition-property: width, background-color;
+    transition-timing-function: ease-in-out;
+    transition-duration: 1s;
   }
   :hover > div:first-of-type {
     width: ${(props) => (props.enabled ? "100%" : "0%")};
     z-index: 2;
-    transition: all 0.2s 0.1s ease-in-out;
+    transition-property: width,background-color;
+    transition-duration: 0.2s;
+    transition-timing-function: ease;
     background-color: ${(props) =>
       props.enabled ? props.theme.primary : "transparent"};
   }
@@ -45,9 +48,9 @@ const ButtonContent = styled.div<ButtonProps>`
   display: flex;
   z-index: 5;
   padding: 5px;
-  transition: all 0.5s 1s ease-in-out;
+  transition: transform 0.5s ease-in-out;
   :hover {
-    transition: all 0.5s 1s ease-in-out;
+    transition: transform 0.5s ease-in-out;
     transform: ${(props) => (props.enabled ? "scale(1.05)" : "scale(1)")};
   }
   align-items: center;

@@ -1,13 +1,15 @@
-import { useEffect, } from "react";
 import styled, { css } from "styled-components";
-import { useModal } from "../../../utils";
+import {
+  modalCloserId,
+  modalContainerId,
+  useModalWithClose,
+} from "../../../utils";
 
 interface ModalState {
   shown?: boolean;
   maxWidth?: number;
   maxHeight?: number;
 }
-
 
 const coverScreenStyles = css<ModalState>`
   position: fixed;
@@ -17,7 +19,6 @@ const coverScreenStyles = css<ModalState>`
   flex-direction: column;
   justify-content: center;
   overflow: hidden;
-  margin-left: ${(props) => (props.shown ? 0 : -110)}vw;
   align-items: center;
   height: ${(props) => (props.shown ? 100 : 0)}vh;
   margin-left: ${(props) => (props.shown ? 0 : -110)}vw;
@@ -33,7 +34,9 @@ const ModalSubContainer = styled.div<ModalState>`
   display: flex;
   flex-direction: column;
   position: relative;
-  transition: all 0.5s 0.5s ease-out;
+  transition-property: margin-left, height, width;
+  transition-duration: 0.5s;
+  transition-timing-function: ease-in-out;
   align-items: center;
   margin-left: ${(props) => (props.shown ? 0 : -110)}vw;
   width: 100vw;
@@ -43,7 +46,9 @@ const ModalSubContainer = styled.div<ModalState>`
 const CloserContainer = styled.div<ModalState>`
   ${coverScreenStyles}
   background-color: rgba(0,0,0,0.5);
-  transition: all 0.5s 0.5s ease-out;
+  transition-property: border-radius, margin-left, height, width;
+  transition-duration: 0.5s;
+  transition-timing-function: ease;
   z-index: ${(props) => (props.shown ? 12 : 0)};
 `;
 
@@ -57,28 +62,11 @@ const ContentContainer = styled.div<ModalState>`
 `;
 
 export const Modal = () => {
-  
-  const [modalState, setModalState] = useModal();
+  const [modalState, toggle] = useModalWithClose();
   const { shown, Component, maxHeight = 300, maxWidth = 500, key } = modalState;
 
-  const toggle = () => {
-    setModalState({ shown: !shown });
-  };
-
-  useEffect(() => {
-    const fun = (e: KeyboardEvent) => {
-      if(e.key === "Escape") {
-        setModalState({shown: false})
-      }
-    }
-    window.addEventListener("keyup", fun)
-    return () => window.removeEventListener("keypress", fun)
-
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  },[])
-
   return (
-    <ModalContainer shown={shown}>
+    <ModalContainer id={modalContainerId} shown={shown}>
       <ModalSubContainer shown={shown}>
         <ContentContainer
           key={key}
@@ -88,7 +76,7 @@ export const Modal = () => {
         >
           {Component}
         </ContentContainer>
-        <CloserContainer onClick={toggle} shown={shown} />
+        <CloserContainer id={modalCloserId} onClick={toggle} shown={shown} />
       </ModalSubContainer>
     </ModalContainer>
   );

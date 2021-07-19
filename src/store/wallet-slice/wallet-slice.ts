@@ -1,7 +1,12 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import moment from "moment";
-import { Currency, CurrencyAmount, CurrencyTypes } from "../../services";
-import { convertToCurrency } from "../../services/currencies-service/currency-service";
+import {
+  Currency,
+  CurrencyAmount,
+  CurrencyTypes,
+  convertToCurrency,
+} from "../../services";
+
 import {
   CurrencyTransfer,
   TransactionHistory,
@@ -56,12 +61,15 @@ const walletSlice = createSlice({
     },
 
     changeDefaultCurrency(state, action: PayloadAction<Currency>) {
-      state.defaultCurrency = action.payload;
+      const currency = state.currentCurrencies.find(
+        (element) => element.currency === action.payload
+      );
+      if (currency) state.defaultCurrency = action.payload;
     },
 
     addAmountToCurrency(state, action: PayloadAction<CurrencyAmount>) {
       const currency = findCurrency(state, action.payload?.currency);
-      if (currency) {
+      if (currency && action.payload.amount > 0) {
         currency.amount += action.payload.amount;
         const history: TransactionHistory = {
           ...currency,
@@ -76,7 +84,7 @@ const walletSlice = createSlice({
     transferCurrency(state, action: PayloadAction<CurrencyTransfer>) {
       const fromCurrency = findCurrency(state, action.payload?.fromCurrency);
       const toCurrency = findCurrency(state, action.payload?.toCurrency);
-      if (fromCurrency && toCurrency) {
+      if (fromCurrency && toCurrency && action.payload.amount > 0) {
         if (fromCurrency.amount >= action.payload.amount) {
           const amount: CurrencyAmount = {
             currency: action.payload.fromCurrency,

@@ -8,6 +8,6 @@ export default {
 
 export const Default = () => (
   <WalletBProvider>
-    <ManagerCurrencies></ManagerCurrencies>
+    <ManagerCurrencies id={"manager-currencies-stories"}></ManagerCurrencies>
   </WalletBProvider>
 );

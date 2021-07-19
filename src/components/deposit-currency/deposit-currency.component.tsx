@@ -91,6 +91,7 @@ export function DepositCurrency(props: CurrencyActionProps) {
         <InputGroup>
           <TextNormal>{t("depositCurrency.currency")}</TextNormal>
           <Select<Currency>
+            id={"deposit-currency-to"}
             value={t(dpValue.text)}
             onChange={(item) =>
               dispatchInputUpdate({ type: "currency", data: item.value })
@@ -108,7 +109,9 @@ export function DepositCurrency(props: CurrencyActionProps) {
                 data: parseInt(event.target.value, 10),
               })
             }
+            min={0}
             placeholder={t("depositCurrency.amountPlaceholder")}
+            label={t("depositCurrency.amountPlaceholder")}
             value={amount?.toFixed(0)}
             type="number"
           />

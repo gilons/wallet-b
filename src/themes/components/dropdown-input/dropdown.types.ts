@@ -2,6 +2,7 @@ import { Option } from "../../types.themes";
 
 export interface DropdownProps<T = string> {
   value?: string;
+  id: string;
   placeholder?: string;
   Icon?: React.ComponentType<any>;
   options?: Array<Option<T>>;
@@ -10,6 +11,7 @@ export interface DropdownProps<T = string> {
 
 export interface DropdownItemsContentProps<T = string> {
   options?: Array<Option<T>>;
+  id: string;
   onClick?: (item: Option<T>) => void;
   toggleOptions?: () => void;
 }

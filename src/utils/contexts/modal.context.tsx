@@ -1,12 +1,13 @@
 import React from "react";
 
-export const DefaultModalState = {
+export const DefaultModalState = Object.freeze({
   shown: false,
   maxHeight: 300,
   key: "",
   maxWidth: 500,
   Component:  <div></div>,
-};
+}); 
+
 const DefaultModalContextValue: ModalContextValue = {
   modalState: DefaultModalState,
   setModalState: (state) => {},

@@ -19,7 +19,9 @@ export const InputContainer = styled(ContainerSolid)`
   flex-direction: row;
   overflow: visible;
   & > div:nth-child(2) {
-    transition: all 0.2s 0.2s ease-in-out;
+    transition-duration: 0.2s;
+    transition-timing-function: ease;
+    transition-property: margin-left, margin-top, width;
     border: none;
     margin-top: 7px;
     position: absolute;
@@ -30,7 +32,9 @@ export const InputContainer = styled(ContainerSolid)`
 const InputModifier = css`
   background-color: ${(props) => props.theme.accent};
   padding: 10px;
-  transition: all 0.2s ease-in-out;
+  transition-property: font-size, margin-left, margin-top;
+  transition-timing-function: ease;
+  transition-duration: 0.2s;
   box-shadow: ${shadow};
   border-radius: 10px;
   margin-top: -30px;

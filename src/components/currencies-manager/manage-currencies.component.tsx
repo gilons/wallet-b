@@ -20,8 +20,10 @@ const MainContainer = styled.div`
   height: 30px;
   display: flex;
 `;
-
-export function ManagerCurrencies() {
+interface ManagerCurrenciesProps {
+  id: string
+}
+export function ManagerCurrencies(props: ManagerCurrenciesProps) {
   const [, setModal] = useModal();
 
   const handleClose = useCallback(() => {
@@ -89,6 +91,7 @@ export function ManagerCurrencies() {
   return (
     <MainContainer>
       <Select
+        id={props.id}
         placeholder={t("manageCurrencies.title")}
         onChange={onChange}
         Icon={() => <ManagerIcon width={"30px"} height={"30px"} />}

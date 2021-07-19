@@ -45,6 +45,7 @@ export const Default = () => {
   return (
     <WithTheme>
       <Select
+        id={"select-story"}
         value={value}
         onChange={handleChange}
         placeholder={"Select me"}

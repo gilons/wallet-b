@@ -121,6 +121,7 @@ export function TransferCurrency(props: CurrencyActionProps) {
         <InputGroup>
           <TextNormal>{t("transferCurrency.fromCurrency")}</TextNormal>
           <Select<Currency>
+            id={"transfer-currency-from"}
             value={t(fromCurrency.text)}
             onChange={(item) =>
               dispatchInputUpdate({ type: "fromCurrency", data: item })
@@ -142,12 +143,14 @@ export function TransferCurrency(props: CurrencyActionProps) {
             label={t("transferCurrency.amountPlaceholder")}
             value={amount?.toFixed(0)}
             type="number"
+            min={0}
             max={currentSelectedAmount}
           />
         </InputGroup>
         <InputGroup>
           <TextNormal>{t("transferCurrency.toCurrency")}</TextNormal>
           <Select<Currency>
+            id={"translator-currency-to"}
             options={toCurrencySelectOption}
             value={t(toCurrency?.text ?? "")}
             Icon={toCurrency?.Icon}

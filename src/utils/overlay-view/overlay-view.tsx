@@ -1,7 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { WithTheme } from "../../providers";
-import { WithLocaleProvider } from "../../locales";
 import { OverlayConfig, Position } from "./overlays.type";
 
 export class OverlayView {
@@ -145,7 +143,7 @@ export class OverlayView {
     this.shown = false;
     ReactDOM.unmountComponentAtNode(this.content as Element);
   }
-  
+
   showOverlay(Component: React.ReactElement) {
     if (this.content) {
       this.shown = true;
@@ -155,11 +153,7 @@ export class OverlayView {
       }
     } else {
       this.init();
-      this.showOverlay(
-        <WithTheme>
-          <WithLocaleProvider>{Component}</WithLocaleProvider>
-        </WithTheme>
-      );
+      this.showOverlay(Component);
     }
   }
 }

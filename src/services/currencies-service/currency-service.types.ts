@@ -82,7 +82,7 @@ export const currenciesMap = Object.freeze<
   },
   [CurrencyTypes.SWISS_FRANC]: {
     name: CurrencyTypes.SWISS_FRANC,
-    dollarFactor: 0.9965,
+    dollarFactor: 0.99647792,
     code: "CHF",
     title: "currencies.swissFranc",
     Icon: SwissFrancIcon,

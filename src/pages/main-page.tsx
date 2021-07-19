@@ -13,16 +13,19 @@ const ManageContainer = styled.div`
   ${forMobile(`
      display: flex;
      justify-content: center;
-     margin-bottom: 20px;
+     width: 100vw;
+     position: fixed;
+     margin-top: 0px;
     `)}
 `;
 
+
 export default function MainPage() {
-  
+
   return (
     <MainLayout>
       <ManageContainer>
-        <ManagerCurrencies />
+        <ManagerCurrencies id={"manager-currencies-main-page"} />
       </ManageContainer>
       <CurrencyBanner />
       <CurrenciesItemList />

@@ -10,6 +10,7 @@ import { Container, H1, TextNormal } from "../../themes";
 
 const MainContainer = styled(Container)`
   flex-direction: column;
+  margin-top: 30px;
   justify-content: center;
   align-items: center;
 `;
