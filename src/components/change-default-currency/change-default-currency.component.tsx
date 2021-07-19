@@ -62,7 +62,6 @@ export function ChangeDefaultCurrency(props: CurrencyActionProps) {
       <>
         <Select<Currency>
           Icon={Icon}
-          id={"change-default-currency"}
           options={options || []}
           value={value}
           placeholder={t("addCurrency.placeholder")}

@@ -25,7 +25,7 @@ export default function MainPage() {
   return (
     <MainLayout>
       <ManageContainer>
-        <ManagerCurrencies id={"manager-currencies-main-page"} />
+        <ManagerCurrencies />
       </ManageContainer>
       <CurrencyBanner />
       <CurrenciesItemList />

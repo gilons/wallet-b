@@ -69,7 +69,6 @@ export const Translator = () => {
   const ModalContent = useMemo(
     () => (
       <Languages
-        id={"translator"}
         options={languages}
         onClick={handleLanguageChange}
         toggleOptions={() => {}}

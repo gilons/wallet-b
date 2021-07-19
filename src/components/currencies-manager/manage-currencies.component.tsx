@@ -20,10 +20,8 @@ const MainContainer = styled.div`
   height: 30px;
   display: flex;
 `;
-interface ManagerCurrenciesProps {
-  id: string
-}
-export function ManagerCurrencies(props: ManagerCurrenciesProps) {
+interface ManagerCurrenciesProps {}
+export function ManagerCurrencies(_: ManagerCurrenciesProps) {
   const [, setModal] = useModal();
 
   const handleClose = useCallback(() => {
@@ -44,7 +42,7 @@ export function ManagerCurrencies(props: ManagerCurrenciesProps) {
     }),
     [handleClose]
   );
-  
+
   const { t } = useLocales();
 
   const options: Array<Option<ActionUnion>> = useMemo(() => {
@@ -76,7 +74,6 @@ export function ManagerCurrencies(props: ManagerCurrenciesProps) {
     ];
   }, [t]);
 
-
   const onChange = useCallback(
     (item: Option<ActionUnion>) => {
       setModal({
@@ -87,11 +84,9 @@ export function ManagerCurrencies(props: ManagerCurrenciesProps) {
     [modalContent, setModal]
   );
 
-
   return (
     <MainContainer>
       <Select
-        id={props.id}
         placeholder={t("manageCurrencies.title")}
         onChange={onChange}
         Icon={() => <ManagerIcon width={"30px"} height={"30px"} />}

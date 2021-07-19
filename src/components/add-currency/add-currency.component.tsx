@@ -67,7 +67,6 @@ export const AddCurrency = (props: CurrencyActionProps) => {
     <Form title={t("addCurrency.title")}>
       <>
         <Select<Currency>
-          id={"add-currency-select"}
           Icon={Icon}
           options={options || []}
           value={value}

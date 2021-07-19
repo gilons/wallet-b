@@ -4,7 +4,7 @@ import { ContainerShadow, Container, ContainerBlur } from "../container";
 import { TextNormal } from "../text";
 import { OptionContainerProps } from "../../types.themes";
 import { DropdownItemsContentProps, DropdownProps } from "./dropdown.types";
-import { coverScreen, shadow } from "../../themes.main";
+import { coverScreen, forMobile, shadow } from "../../themes.main";
 import { ChevronDownIcon, ChevronUpIcon } from "../../../svg-icons";
 
 const SelectContainer = styled(ContainerShadow)`
@@ -32,6 +32,9 @@ const OptionsContainer = styled.div<OptionContainerProps>`
   margin-left: -8px;
   margin-top: -4px;
   transition: max-height 0.5s linear;
+  ${forMobile(`
+    transition: none !important;
+  `)}
   height: auto;
   z-index: 10;
   overflow: ${(props) => (props.show ? "auto" : "hidden")};
@@ -92,6 +95,7 @@ const Divider = styled.div`
   width: 100%;
 `;
 
+/*
 const waitForAnimationAndCallback = (id: string , callback: any) => {
 
   const element = document.getElementById(id)
@@ -101,11 +105,11 @@ const waitForAnimationAndCallback = (id: string , callback: any) => {
     element?.removeEventListener("transitionend", callback)
   }, 1000)
 }
+*/
 export function ItemsContent<T>({
   options,
   onClick,
   toggleOptions,
-  id
 }: DropdownItemsContentProps<T>) {
   
   const content = useMemo(
@@ -113,7 +117,7 @@ export function ItemsContent<T>({
       options &&
       options.map((ele) => {
         const handleChange = () => {
-          waitForAnimationAndCallback(id, () => onClick && onClick(ele))
+           onClick && onClick(ele)
           toggleOptions && toggleOptions();
         };
         return (
@@ -126,7 +130,7 @@ export function ItemsContent<T>({
           </Container>
         );
       }),
-    [options, id, toggleOptions, onClick]
+    [options, toggleOptions, onClick]
   );
   return <OptionsContent>{content}</OptionsContent>;
 }
@@ -157,10 +161,9 @@ export function Select<T = string>(props: DropdownProps<T>) {
           )}
         </RightIcon>
       </SelectHeaderContent>
-      <OptionsContainer id={props.id} show={show}>
+      <OptionsContainer show={show}>
         <OptionsSubContainer opacity={0.7} intensity={100}>
           <ItemsContent<T>
-            id={props.id}
             options={props.options}
             toggleOptions={toggleOptions}
             onClick={props.onChange}
