@@ -32,9 +32,6 @@ const OptionsContainer = styled.div<OptionContainerProps>`
   margin-left: -8px;
   margin-top: -4px;
   transition: max-height 0.5s linear;
-  ${forMobile(`
-    transition: none !important;
-  `)}
   height: auto;
   z-index: 10;
   overflow: ${(props) => (props.show ? "auto" : "hidden")};
