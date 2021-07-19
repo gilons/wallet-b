@@ -13,8 +13,10 @@ const TranslatorContainer = styled(Container)`
   align-items: center;
   margin-right: 20px;
   cursor: pointer;
-  justify-content: space-between;
+  justify-content: center;
   border-radius: 30px;
+  width: 25px;
+  height: 25px;
   background-color: ${(props) => props.theme.primary};
   box-shadow: ${shadow};
   border-color: ${(props) => props.theme.accent};
