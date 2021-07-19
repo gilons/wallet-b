@@ -7,6 +7,9 @@ This repo repo can be seen in live action at https://e-wallet-app-giles.herokuap
 
 In the project directory, you can run:
 
+### `yarn`
+Installs all the packages need to run the application
+
 ### `yarn start`
 
 Runs the app in the development mode.\
