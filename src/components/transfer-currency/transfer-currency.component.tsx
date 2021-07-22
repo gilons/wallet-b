@@ -130,17 +130,16 @@ export function TransferCurrency(props: CurrencyActionProps) {
           />
         </InputGroup>
         <InputGroup>
-          <TextNormal>{t("transferCurrency.transferAmount")}</TextNormal>
           <Input
             onChange={(event) =>
               dispatchInputUpdate({
                 type: "amount",
-                data: parseInt(event.target.value, 10),
+                data: parseFloat(event.target.value),
               })
             }
             placeholder={t("transferCurrency.amountPlaceholder")}
             label={t("transferCurrency.amountPlaceholder")}
-            value={amount?.toFixed(0)}
+            value={amount}
             type="number"
             min={0}
             max={currentSelectedAmount}
