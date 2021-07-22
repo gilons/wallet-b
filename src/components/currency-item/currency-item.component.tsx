@@ -15,7 +15,7 @@ const MainContainer = styled(ContainerShadow)`
   margin: 10px;
   align-items: center;
   min-height: 200px;
-  max-width: 100%;
+  max-width: 250px;
 `;
 
 const IconContainer = styled(ContainerShadow)`
@@ -43,7 +43,7 @@ export function CurrencyItem({ amount }: CurrencyItemProps) {
         {item.Icon && <item.Icon width={"50px"} height={"50px"} />}
       </IconContainer>
       <TextContainer>
-        <ItemText>{`${amount.amount.toFixed(2)} ${item.code}`}</ItemText>
+        <ItemText>{`${Number(amount.amount).toFixed(2).toLocaleString()} ${item.code}`}</ItemText>
       </TextContainer>
     </MainContainer>
   ) : (

@@ -10,4 +10,5 @@ export const Text = styled.div<TextThemeProps>`
   font-style: ${(props) => props.fontStyle || props.theme.textFontStyle};
   display: webkit-box;
   -webkit-box-orient: vertical;
+  word-break: break-word;
 `;

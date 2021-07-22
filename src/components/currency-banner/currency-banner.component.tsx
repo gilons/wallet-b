@@ -39,7 +39,7 @@ export function CurrencyBanner() {
       <TitleText>{t("banner.title")}</TitleText>
       <SubTitle>{t("banner.subtitle")}:</SubTitle>
       <AmountText fontWeight={"600"}>
-        {`${totalAmountInWallet?.toFixed(2)} ${currency.code}`}
+        <span>{`${Number(totalAmountInWallet).toLocaleString()} ${currency.code}`}</span>
       </AmountText>
     </MainContainer>
   );
