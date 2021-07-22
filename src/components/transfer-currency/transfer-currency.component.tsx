@@ -130,7 +130,7 @@ export function TransferCurrency(props: CurrencyActionProps) {
           />
         </InputGroup>
         <InputGroup>
-        <TextNormal>{""}</TextNormal>
+        <TextNormal>{"  "}</TextNormal>
           <Input
             onChange={(event) =>
               dispatchInputUpdate({
@@ -155,7 +155,7 @@ export function TransferCurrency(props: CurrencyActionProps) {
             onChange={(item) => {
               dispatchInputUpdate({ type: "toCurrency", data: item });
             }}
-            placeholder={t("transferCurrency.selectCurrencyPlaceholder")}
+            placeholder={t("transferCurrency.selectPlaceholder")}
           />
         </InputGroup>
         <ButtonContainer>

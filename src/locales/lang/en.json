@@ -44,7 +44,6 @@
         "fromCurrency": "From Currency",
         "transferAmount": "Transfer Amount",
         "amountPlaceholder": "Enter Amount",
-        "selectCurrencyPlaceholder": "Select Amount",
         "toCurrency": "To Currency",
         "selectPlaceholder": "Select Currency"
     },
