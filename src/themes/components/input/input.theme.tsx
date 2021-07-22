@@ -25,12 +25,12 @@ export const InputContainer = styled(ContainerSolid)`
     border: none;
     margin-top: 7px;
     position: absolute;
-    background-color: transparent;
+    background-color: ${props => props.theme.primary};
     z-index: 2;
   }
 `;
 const InputModifier = css`
-  background-color: ${(props) => props.theme.accent};
+  background-color: ${(props) => props.theme.primary};
   padding: 10px;
   transition-property: font-size, margin-left, margin-top;
   transition-timing-function: ease;

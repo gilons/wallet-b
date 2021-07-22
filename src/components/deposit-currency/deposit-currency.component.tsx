@@ -105,13 +105,13 @@ export function DepositCurrency(props: CurrencyActionProps) {
             onChange={(event) =>
               dispatchInputUpdate({
                 type: "amount",
-                data: parseInt(event.target.value, 10),
+                data: parseFloat(event.target.value),
               })
             }
             min={0}
             placeholder={t("depositCurrency.amountPlaceholder")}
             label={t("depositCurrency.amountPlaceholder")}
-            value={amount?.toFixed(0)}
+            value={amount}
             type="number"
           />
         </InputGroup>
