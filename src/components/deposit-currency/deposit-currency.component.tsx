@@ -100,6 +100,7 @@ export function DepositCurrency(props: CurrencyActionProps) {
           />
         </InputGroup>
         <InputGroup>
+        <TextNormal>{""}</TextNormal>
           <Input
             onChange={(event) =>
               dispatchInputUpdate({

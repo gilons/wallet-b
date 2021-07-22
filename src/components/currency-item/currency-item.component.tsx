@@ -15,7 +15,7 @@ const MainContainer = styled(ContainerShadow)`
   margin: 10px;
   align-items: center;
   min-height: 200px;
-  max-width: 250px;
+  max-width: 100%;
 `;
 
 const IconContainer = styled(ContainerShadow)`

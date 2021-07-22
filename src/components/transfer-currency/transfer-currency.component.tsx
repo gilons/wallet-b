@@ -130,6 +130,7 @@ export function TransferCurrency(props: CurrencyActionProps) {
           />
         </InputGroup>
         <InputGroup>
+        <TextNormal>{""}</TextNormal>
           <Input
             onChange={(event) =>
               dispatchInputUpdate({
